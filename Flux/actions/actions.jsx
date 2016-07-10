@@ -8,11 +8,11 @@ var actions = {
             text:text
         });
   },
-  editItem:function(id, update){
+  editItem:function(id, index){
     AppDispatcher.handleAction({
             actionType: Constants.ACTION_EDIT_ITEM,
             id: id,
-            update: update
+            index: index
         });
   },
   deleteItem:function(id){
@@ -21,21 +21,16 @@ var actions = {
             id: id
         });
   },
-  // listItem:function(){
-  //   AppDispatcher.dispatch({
-  //           actionType: Constants.ACTION_LIST_ITEM
-  //       });
-  // },
   detailItem:function(id){
     AppDispatcher.handleAction({
             actionType: Constants.ACTION_DETAIL_ITEM,
             id: id
         });
   },
-  deleteCart:function(id){
+  deleteCart:function(idd){
     AppDispatcher.handleAction({
-            actionType: Constants.ACTION_DELETECART_ITEM,
-            id:id
+            actionType: Constants.DELETECART_ITEM,
+            idd:idd
         });
   },
   addToCart:function(product){

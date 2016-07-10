@@ -10,16 +10,16 @@ var CHANGE_EVENT = 'change';
 var listCart = [];
 var listProducts = [
     {
-        "id": "1",
-        "nameProduct": "Vai",
+        "id": "#15RPJO34",
+        "nameProduct": "Thanh cong khong voi vang",
         "price": "2000",
-        "describe": "ssssssssssssssssssss",
+        "describe": "Hay lam nhung dieu minh khong thich neu...",
         "photo": "http://i.telegraph.co.uk/multimedia/archive/03589/Wellcome_Image_Awa_3589699k.jpg"
     }, {
-        "id": "2",
-        "nameProduct": "Haha",
+        "id": "#15RPJO30",
+        "nameProduct": "Dung bao gio di an mot minh",
         "price": "1000",
-        "describe": "eeeeeeeee",
+        "describe": "Co bao gio ban chon di..",
         "photo": "http://i.telegraph.co.uk/multimedia/archive/03589/Wellcome_Image_Awa_3589699k.jpg"
     }
 ];
@@ -28,9 +28,27 @@ var addItem = function(text) {
 
     listProducts.push(text);
 };
-var editItem = function() {};
-var delItem = function() {};
-var delCart = function() {};
+var editItem = function(id, index) {
+  var items = this.state.listProducts;
+   items[index] = item;
+   listProducts = items;
+};
+var delItem = function(id) {
+    // listProducts.splice(index, 1);
+    listProducts = listProducts.filter(function(ls) {
+        return ls.id !== id;
+    })
+};
+
+var delCart = function(idw) {
+    var productTemp = JSON.parse(JSON.stringify(listCart));
+
+    productTemp = productTemp.filter(function(lss) {
+        return lss.id !== idw;
+        // listCart.splice(idw, 1);
+    });
+    listCart = productTemp;
+};
 var addToCart = function(product) {
     product.numberPr = 1;
     var isNew = true;
@@ -40,7 +58,7 @@ var addToCart = function(product) {
                 var productTemp = JSON.parse(JSON.stringify(listCart[i]));
                 productTemp.numberPr += 1;
                 listCart[i] = productTemp;
-                console.log(listCart[i]);
+                // console.log(listCart[i]);
                 isNew = false;
                 break;
             }
@@ -89,7 +107,15 @@ AppDispatcher.register(function(payload) {
             }
             break;
         case appConstants.ACTION_DELETE_ITEM:
-            deleteItem(action.id);
+            delItem(action.id);
+            ShopStore.emit(CHANGE_EVENT);
+            break;
+        case appConstants.DELETECART_ITEM:
+            delCart(action.idd);
+            ShopStore.emit(CHANGE_EVENT);
+            break;
+        case appConstants.ACTION_EDIT_ITEM:
+            delCart(action.id, action.index);
             ShopStore.emit(CHANGE_EVENT);
             break;
         case appConstants.ACTION_CART_ITEM:

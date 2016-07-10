@@ -24,7 +24,7 @@ class Additem extends React.Component {
     }
 
     ItemHandle(e) {
-        if (this.state.item.name == null || this.state.item.price == null || this.state.item.describe == null || this.state.item.photo == null) {
+        if (this.state.item.nameProduct == null || this.state.item.price == null || this.state.item.describe == null || this.state.item.photo == null) {
             alert("Please input enought infor...");
         } else {
             if (this.state.item.id) {
@@ -43,7 +43,7 @@ class Additem extends React.Component {
                     <FormGroup bsSize="large" className="formGroup">
                       <InputGroup id="inputGroup">
                             <InputGroup.Addon><Glyphicon glyph="user"/></InputGroup.Addon>
-                            <FormControl type="text" placeholder="input name product...." value={this.state.item.name || ''} onChange={this.handleOnchange.bind(this, 'name')}/>
+                            <FormControl type="text" placeholder="input name product...." value={this.state.item.nameProduct || ''} onChange={this.handleOnchange.bind(this, 'nameProduct')}/>
                         </InputGroup>
                         <InputGroup id="inputGroup">
                             <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>

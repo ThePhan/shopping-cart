@@ -1,20 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {Button} from 'react-bootstrap';
 
 class Cart extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            dataCart: this.props.dataCart || {}
-        }
 
-        this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
+        this.handlebtCartDelete = this.handlebtCartDelete.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            dataCart: this.props.dataCart || {}
-        })
+    // getChildContext(){
+    //   return{
+    //     product: this.props.dataCart
+    //   }
+    // }
+    //
+    handlebtCartDelete() {
+        this.props.handlebtCartDelete(this.props.dataCart.id);
     }
 
     render() {
@@ -25,8 +27,15 @@ class Cart extends React.Component {
                 {this.props.dataCart.price}
                 <br/> {this.props.dataCart.numberPr}
                 <Link to="details">View details</Link>
+                <br/>
+                <button type="button" onClick={this.handlebtCartDelete}>
+                    Delete
+                </button>
             </div>
-        )
+        );
     }
 }
+// Cart.contextTypes={
+//   product: this.props.dataCart
+// };
 export default Cart;

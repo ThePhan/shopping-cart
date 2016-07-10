@@ -18,6 +18,8 @@ class Home extends React.Component {
         this._onChange = this._onChange.bind(this);
         this.updateItemHandle = this.updateItemHandle.bind(this);
         this.handleBuy = this.handleBuy.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
+        this.deleteCart = this.deleteCart.bind(this);
     }
     componentDidMount() {
         AppStore.addChangeListener(this._onChange);
@@ -45,24 +47,36 @@ class Home extends React.Component {
         //get editUser to set value for "user":use for update, delete, addfriend, delete friend
         this.setState({editItem: this.state.listItems[index], editItemIndex: index});
     }
+
     updateItemHandle(item, index) {
-        var items = this.state.listItems;
-        items[index] = item;
-        this.setState({listItems: items, editItem: {}});
+      Actions.editItem(item, index);
+
+        // var items = this.state.listItems;
+        // items[index] = item;
+        this.setState({null, editItem:{} });
     }
+
     handleBuy(indexItem){
       var product = this.state.listItems[indexItem];
       Actions.addToCart(product);
+    }
+
+    deleteItem(idItem){
+      Actions.deleteItem(idItem);
+    }
+
+    deleteCart(idItem){
+      Actions.deleteCart(idItem);
     }
     render() {
         return (
             <div>
                 <Additem addItemHandle={this.addItemHandle} updateItemHandle={this.updateItemHandle} item={this.state.editItem} indexItem={this.state.editItemIndex}/>
                 {this.state.listItems.map(function(product, i) {
-                    return (<ListItem itemsList={this.state.listItems} handleEditButton={this.handleEditButton} handleBuyButton={this.handleBuy} key={i} data={product} indexItem={i}/>)
+                    return (<ListItem itemsList={this.state.listItems} handleDeleteButton={this.deleteItem} handleEditButton={this.handleEditButton} handleBuyButton={this.handleBuy} key={i} data={product} indexItem={i}/>)
                 }, this)}
                 {this.state.listCart.map(function(productCart, i) {
-                    return (<Cart key={i} dataCart={productCart} />)
+                    return (<Cart key={i} dataCart={productCart} handlebtCartDelete={this.deleteCart} indexItem={i}/>)
                 }, this)}
             </div>
         )
