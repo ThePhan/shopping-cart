@@ -14,13 +14,13 @@ var listProducts = [
         "nameProduct": "Thanh cong khong voi vang",
         "price": "2000",
         "describe": "Hay lam nhung dieu minh khong thich neu...",
-        "photo": "http://i.telegraph.co.uk/multimedia/archive/03589/Wellcome_Image_Awa_3589699k.jpg"
+        "photo": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5R71EQl5fxhMzgc1SieZmDQDbxU52fbqdd4FFcdUT1NgG9FpF"
     }, {
         "id": "#15RPJO30",
         "nameProduct": "Dung bao gio di an mot minh",
         "price": "1000",
         "describe": "Co bao gio ban chon di..",
-        "photo": "http://i.telegraph.co.uk/multimedia/archive/03589/Wellcome_Image_Awa_3589699k.jpg"
+        "photo": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS6o8JWl_IAcKxu1-h29K1D99sqQqqMNPRbJo_iqTPXofdGZ1_0"
     }
 ];
 

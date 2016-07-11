@@ -1,20 +1,11 @@
 .container {
     background: #999966;
 }
-.try {
-    background-color: #E0E0E0;
-    margin-top: 10px;
-}
 .formUser {
     background-color: #BCAAA4;
-    padding: 20px 0px 20px 40px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    padding: 20px;
+    margin: 10px;
     font-size: 20px;
-}
-input {
-    width: 300px;
-    height: 35px;
 }
 .subFormUser {
     padding: 20px 0px 20px 40px;
@@ -22,63 +13,89 @@ input {
     border-radius: 9px;
     background-color: #B0BEC5;
 }
-#contentTD{
-  margin: 35px;
+.cart {
+    padding-top: 20px;
 }
-.cart{
-  padding-top: 20px;
-}
-.contenCart{
-  padding: 30px;
-  margin: 10px;
-  background-color: #C5E1A5;
-  border-radius: 9px;
+.contenCart {
+    padding: 30px;
+    margin: 10px;
+    background-color: #C5E1A5;
+    border-radius: 9px;
 }
 #photo {
     padding-right: 37px;
 }
 .listUser {
-    padding: 20px;
+    padding-top: 20px;
 }
-#imageUser {
-    padding: 5px;
-}
-#infor {
-    font-size: 20px;
-    padding-left: 15px;
-    padding-top: 5px;
-    width: 300px;
-}
-#formListFrient {
+.listCart {
+    background-color: #D7CCC8;
+    margin: 4px;
     padding: 10px;
-    background-color: #EEEEEE;
+    border-radius: 9px;
 }
-#listFriend {
-    margin-right: 10px;
+.listCartContent {
+    background-color: #F5F5F5;
+    padding: 7px;
 }
-#titleUser{
-  color: white;
+.cartNull {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #E0E0E0;
+    margin: 10px;
+    border-radius: 9px;
+}
+.titleCart{
+  padding-top: 20px;
+  text-align: center;
+  font-size: 35px;
   font-weight: bold;
-  font-size: 30px;
+  color: white;
 }
-.formGroup{
-  margin-right: 30px;
+#inputGroup {
+    margin: 8px;
 }
-#inputGroup{
-  margin: 8px;
+#spaceButton {
+    margin: 2px;
 }
-#spaceButton{
-  margin: 2px;
+.FULL {
+    padding-top: 300px;
 }
-.FULL{
-  padding-top: 50px;
-}
-.menuConten{
-  background-color:#00796B;
+.menuConten {
+    background-color: #00796B;
 }
 .navbar-default .navbar-nav>li>a {
-  color: #fff !important;
+    color: #fff !important;
 }
-.activeA{
-  background-color: red;
+.activeA {
+    background-color: red;
+}
+.menuCart{
+  color: red;
+  font-size: 17px;
+  font-weight: bold;
+}
+.adminContent{
+  background-color: #BCAAA4;
+  padding: 10px;
+  margin: 7px;
+}
+.contendProductAdmin{
+  background-color: #FFF3E0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#book{
+  position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 3;
+ width: 100%;
+ background-color: #00a087;
+}
+.manageStore{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 }

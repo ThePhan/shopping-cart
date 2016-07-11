@@ -1,5 +1,6 @@
 import React from 'react';
 import {Button, FormGroup, InputGroup, Glyphicon, FormControl} from 'react-bootstrap';
+
 class Additem extends React.Component {
     constructor(props) {
         super(props);
@@ -37,34 +38,33 @@ class Additem extends React.Component {
 
     render() {
         return (
-
-            <div className="row formUser">
-                <div className="col-xs-12 col-sm-6 col-md-6 subFormUser">
-                    <FormGroup bsSize="large" className="formGroup">
-                      <InputGroup id="inputGroup">
-                            <InputGroup.Addon><Glyphicon glyph="user"/></InputGroup.Addon>
-                            <FormControl type="text" placeholder="input name product...." value={this.state.item.nameProduct || ''} onChange={this.handleOnchange.bind(this, 'nameProduct')}/>
-                        </InputGroup>
-                        <InputGroup id="inputGroup">
-                            <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>
-                            <FormControl type="text" placeholder="input price...." value={this.state.item.price || ''} onChange={this.handleOnchange.bind(this, 'price')}/>
-                        </InputGroup>
-                        <InputGroup id="inputGroup">
-                            <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>
-                            <FormControl type="text" placeholder="input describe...." value={this.state.item.describe || ''} onChange={this.handleOnchange.bind(this, 'describe')}/>
-                        </InputGroup>
-                        <InputGroup id="inputGroup">
-                            <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>
-                            <FormControl type="text" placeholder="input photo...." value={this.state.item.photo || ''} onChange={this.handleOnchange.bind(this, 'photo')}/>
-                        </InputGroup>
-                    </FormGroup>
-                    <Button bsStyle="success" bsSize="small" onClick={this.ItemHandle}><Glyphicon glyph="leaf"/> {this.state.item.id
-                            ? 'Update item'
-                            : 'Add item'}</Button>
-                    <br/>
+                <div className="row formUser">
+                <p className= "manageStore"> MANAGER STORE </p>
+                    <div className="col-xs-12 col-sm-6 col-md-6 subFormUser">
+                        <FormGroup bsSize="large" className="formGroup">
+                            <InputGroup id="inputGroup">
+                                <InputGroup.Addon><Glyphicon glyph="user"/></InputGroup.Addon>
+                                <FormControl type="text" placeholder="input name product...." value={this.state.item.nameProduct || ''} onChange={this.handleOnchange.bind(this, 'nameProduct')}/>
+                            </InputGroup>
+                            <InputGroup id="inputGroup">
+                                <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>
+                                <FormControl type="text" placeholder="input price...." value={this.state.item.price || ''} onChange={this.handleOnchange.bind(this, 'price')}/>
+                            </InputGroup>
+                            <InputGroup id="inputGroup">
+                                <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>
+                                <FormControl type="text" placeholder="input describe...." value={this.state.item.describe || ''} onChange={this.handleOnchange.bind(this, 'describe')}/>
+                            </InputGroup>
+                            <InputGroup id="inputGroup">
+                                <InputGroup.Addon><Glyphicon glyph="camera"/></InputGroup.Addon>
+                                <FormControl type="text" placeholder="input photo...." value={this.state.item.photo || ''} onChange={this.handleOnchange.bind(this, 'photo')}/>
+                            </InputGroup>
+                        </FormGroup>
+                        <Button bsStyle="success" bsSize="small" onClick={this.ItemHandle}><Glyphicon glyph="leaf"/> {this.state.item.id
+                                ? 'Update item'
+                                : 'Add item'}</Button>
+                        <br/>
+                    </div>
                 </div>
-
-            </div>
         );
     }
 }
