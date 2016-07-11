@@ -1,22 +1,25 @@
 import React from 'react';
+import AppStore from '../stores/AppStore.jsx';
 
-class Details extends React.Component{
-  constructor(props) {
-      super(props);
-      this.state = {
-          ids: this.props.ids || {}
-      }
-      this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
+class Details extends React.Component {
+    constructor(props) {
+        super(props);
+
     }
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            ids: nextProps.ids || {}
-        });
+
+
+    render() {
+        console.log("aaaa ", AppStore.getListCart() );
+        console.log("thiss ", this.context );
+        return (
+            <div>
+
+                SFSDFGSFWSDF
+            </div>
+        );
     }
-  render(){
-    return(
-      <h2> sssssssssssssssss{this.state.ids.nameProduct} </h2>
-      );
-  }
 }
+Details.contextTypes = {
+  product: React.PropTypes.object
+};
 export default Details;

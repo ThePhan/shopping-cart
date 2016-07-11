@@ -1,41 +1,39 @@
 import React from 'react';
 import {Link} from 'react-router';
 import {Button} from 'react-bootstrap';
+import Details from './Details.jsx';
+import AppStore from '../stores/AppStore.jsx';
+import Actions from '../actions/actions.jsx';
+import ListCart from './ListCart.jsx';
 
 class Cart extends React.Component {
     constructor(props) {
         super(props);
-
-        this.handlebtCartDelete = this.handlebtCartDelete.bind(this);
+        this.state = {
+            listCart: AppStore.getListCart()
+        }
+        this._onChange = this._onChange.bind(this);
     }
 
-    // getChildContext(){
-    //   return{
-    //     product: this.props.dataCart
-    //   }
-    // }
-    //
-    handlebtCartDelete() {
-        this.props.handlebtCartDelete(this.props.dataCart.id);
+    componentDidMount() {
+        AppStore.addChangeListener(this._onChange);
+    }
+    componentWillUnmount() {
+        AppStore.removeChangeListener(this._onChange);
+    }
+    _onChange() {
+        this.setState({listCart: AppStore.getListCart()});
     }
 
     render() {
         return (
             <div>
-                {this.props.dataCart.id}
-                {this.props.dataCart.nameProduct}
-                {this.props.dataCart.price}
-                <br/> {this.props.dataCart.numberPr}
-                <Link to="details">View details</Link>
-                <br/>
-                <button type="button" onClick={this.handlebtCartDelete}>
-                    Delete
-                </button>
+            {this.state.listCart.map(function(productCart, i) {
+                return (<ListCart key={i} dataCart={productCart} indexItem={i}/>)
+            }, this)}
             </div>
-        );
+        )
+
     }
-}
-// Cart.contextTypes={
-//   product: this.props.dataCart
-// };
+};
 export default Cart;

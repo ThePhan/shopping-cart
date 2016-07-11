@@ -15,8 +15,9 @@ ReactDOM.render((
          <Route path = "home" component = {Home} />
          <Route path = "additem" component = {Additem} />
          <Route path = "cart" component = {Cart} />
-         <Route path = "details" component = {Details} />
+         <Route path = "details/:product.id" component = {Details} />
       </Route>
    </Router>
 
 ), document.getElementById('app'));
+// <A context = "dad" >

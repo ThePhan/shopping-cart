@@ -6,11 +6,6 @@ var config = {
         filename: 'index.js',
     },
 
-    devServer: {
-        inline: true,
-        port: 2020
-    },
-
     module: {
         loaders: [{
             test: /\.jsx?$/,

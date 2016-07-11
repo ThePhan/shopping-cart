@@ -1,11 +1,11 @@
 .container {
     background: #999966;
 }
-#try {
+.try {
     background-color: #E0E0E0;
     margin-top: 10px;
 }
-#formUser {
+.formUser {
     background-color: #BCAAA4;
     padding: 20px 0px 20px 40px;
     margin-bottom: 10px;
@@ -16,17 +16,28 @@ input {
     width: 300px;
     height: 35px;
 }
-#subFormUser {
+.subFormUser {
     padding: 20px 0px 20px 40px;
     border: 1px solid;
     border-radius: 9px;
-    width: 700px;
     background-color: #B0BEC5;
+}
+#contentTD{
+  margin: 35px;
+}
+.cart{
+  padding-top: 20px;
+}
+.contenCart{
+  padding: 30px;
+  margin: 10px;
+  background-color: #C5E1A5;
+  border-radius: 9px;
 }
 #photo {
     padding-right: 37px;
 }
-#listUser {
+.listUser {
     padding: 20px;
 }
 #imageUser {
@@ -58,4 +69,16 @@ input {
 }
 #spaceButton{
   margin: 2px;
+}
+.FULL{
+  padding-top: 50px;
+}
+.menuConten{
+  background-color:#00796B;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #fff !important;
+}
+.activeA{
+  background-color: red;
 }

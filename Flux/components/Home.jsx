@@ -19,7 +19,7 @@ class Home extends React.Component {
         this.updateItemHandle = this.updateItemHandle.bind(this);
         this.handleBuy = this.handleBuy.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
-        this.deleteCart = this.deleteCart.bind(this);
+        // this.deleteCart = this.deleteCart.bind(this);
     }
     componentDidMount() {
         AppStore.addChangeListener(this._onChange);
@@ -28,13 +28,13 @@ class Home extends React.Component {
         AppStore.removeChangeListener(this._onChange);
     }
     _onChange() {
-        this.setState({listItems: AppStore.getAll()});
+        this.setState({listItems: AppStore.getAll(), listCart:AppStore.getListCart()});
     }
     addItemHandle(item) {
       var idItem = new Date().getTime();
         var x = '';
-        for (var i = 0; i < 8; i++) {
-            var _id = Math.floor(Math.random() * 36);
+        for (var i = 0; i < 7; i++) {
+            var _id = Math.floor(Math.random() * 35);
             if (_id > 9) {
                 _id = String.fromCharCode(_id - 10 + 'A'.charCodeAt('0'));
             }
@@ -44,15 +44,12 @@ class Home extends React.Component {
         Actions.addItem(item);
     }
     handleEditButton(index) {
-        //get editUser to set value for "user":use for update, delete, addfriend, delete friend
         this.setState({editItem: this.state.listItems[index], editItemIndex: index});
     }
 
     updateItemHandle(item, index) {
       Actions.editItem(item, index);
 
-        // var items = this.state.listItems;
-        // items[index] = item;
         this.setState({null, editItem:{} });
     }
 
@@ -65,9 +62,9 @@ class Home extends React.Component {
       Actions.deleteItem(idItem);
     }
 
-    deleteCart(idItem){
-      Actions.deleteCart(idItem);
-    }
+    // deleteCart(idItem){
+    //   Actions.deleteCart(idItem);
+    // }
     render() {
         return (
             <div>
@@ -75,9 +72,7 @@ class Home extends React.Component {
                 {this.state.listItems.map(function(product, i) {
                     return (<ListItem itemsList={this.state.listItems} handleDeleteButton={this.deleteItem} handleEditButton={this.handleEditButton} handleBuyButton={this.handleBuy} key={i} data={product} indexItem={i}/>)
                 }, this)}
-                {this.state.listCart.map(function(productCart, i) {
-                    return (<Cart key={i} dataCart={productCart} handlebtCartDelete={this.deleteCart} indexItem={i}/>)
-                }, this)}
+
             </div>
         )
     }

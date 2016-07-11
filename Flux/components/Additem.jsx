@@ -38,8 +38,8 @@ class Additem extends React.Component {
     render() {
         return (
 
-            <div id="formUser">
-                <div id="subFormUser">
+            <div className="row formUser">
+                <div className="col-xs-12 col-sm-6 col-md-6 subFormUser">
                     <FormGroup bsSize="large" className="formGroup">
                       <InputGroup id="inputGroup">
                             <InputGroup.Addon><Glyphicon glyph="user"/></InputGroup.Addon>
