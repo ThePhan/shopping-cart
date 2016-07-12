@@ -1,5 +1,6 @@
 .container {
     background: #999966;
+    padding-left: 0 !important;
 }
 .formUser {
     background-color: #BCAAA4;
@@ -61,6 +62,7 @@
 }
 .FULL {
     padding-top: 300px;
+    min-height: 900px;
 }
 .menuConten {
     background-color: #00796B;
@@ -109,4 +111,13 @@
 }
 .totalCart{
   background-color: #BCAAA4;
+}
+.listCartDetail{
+  background-color: #F5F5F5;
+  padding: 7px;
+  margin: 10px;
+}
+.row{
+  margin-right: 5px !important;
+    margin-left: 5px !important;
 }

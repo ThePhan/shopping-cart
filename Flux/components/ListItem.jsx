@@ -26,7 +26,7 @@ class ListItem extends React.Component {
                             <b>
                                 Id:
                             </b>
-                            <span id="idBook"> {this.props.data.id}</span>
+                            <span id="idBook"> #{this.props.data.id}</span>
                         </p>
                         <p>
                             <b>

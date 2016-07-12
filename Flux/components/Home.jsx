@@ -1,9 +1,7 @@
 import React from 'react';
 import AppStore from '../stores/AppStore.jsx';
-import Additem from './Additem.jsx';
 import Actions from '../actions/actions.jsx';
 import ListItem from './ListItem.jsx';
-import Cart from './Cart.jsx';
 
 class Home extends React.Component {
     constructor(props) {

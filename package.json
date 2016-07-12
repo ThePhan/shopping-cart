@@ -20,6 +20,7 @@
     "react-bootstrap": "~0.29.5",
     "object-assign": "~4.1.0",
     "react-router": "~2.5.2",
-    "flux": "~2.1.1"
+    "flux": "~2.1.1",
+    "react-localstorage": "~0.3.0"
   }
 }
