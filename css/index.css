@@ -99,3 +99,14 @@
   font-weight: bold;
   color: white;
 }
+#nameBook{
+  color: #009688;
+  font-size: 18px;
+}
+#idBook{
+  color: #039BE5;
+  font-size: 17px;
+}
+.totalCart{
+  background-color: #BCAAA4;
+}

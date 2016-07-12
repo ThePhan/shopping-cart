@@ -11,16 +11,28 @@ var listCart = [];
 var listProducts = [
     {
         "id": "#15RPJO34",
-        "nameProduct": "Thanh cong khong voi vang",
-        "price": "2000",
-        "describe": "Hay lam nhung dieu minh khong thich neu...",
-        "photo": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR5R71EQl5fxhMzgc1SieZmDQDbxU52fbqdd4FFcdUT1NgG9FpF"
+        "nameProduct": "Successful Career Change In A Week",
+        "price": "10",
+        "describe": "Sunday: Use research to test the strength of your ideas and identify your transferable skills, Monday: Understand the financial implications of changing your job and find ways to supplement your income Tuesday: Overcome lack of skills and experience by gaining new qualifications and considering work experience Wednesday: Assess the opportunities available within your company and convince your employers of your aspirations Thursday: Create an effective CV for the outside job market and learn how to get noticed without experience Friday: Explore your options when career change is forced on you and use the temporary job market as your 'Trojan horse' Saturday: Reduce your hours and responsibilities in your current job or find a career which is less demanding ...",
+        "photo": "img/366.u2654.d20160709.t153305.jpg"
     }, {
         "id": "#15RPJO30",
-        "nameProduct": "Dung bao gio di an mot minh",
-        "price": "1000",
-        "describe": "Co bao gio ban chon di..",
-        "photo": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS6o8JWl_IAcKxu1-h29K1D99sqQqqMNPRbJo_iqTPXofdGZ1_0"
+        "nameProduct": "Nikkei Asian Review: Bye Bye Britain?",
+        "price": "15",
+        "describe": "The only Asia-focused English-language publication that brings you insights about business, finance, economic and political news, comments and analysis for Asia. Nikkei Asian Review is a weekly English language news-magazine owned by Nikkei, one of Japan's leading media groups...",
+        "photo": "img/20160630-bye-bye-britain_magazine_container_main_image.u335.d20160701.t155837.jpg"
+    }, {
+        "id": "#15R47O30",
+        "nameProduct": "The Economist: Anarchy In The UK",
+        "price": "12",
+        "describe": "The only Asia-focused English-language publication that brings you insights about business, finance, economic and political news, comments and analysis for Asia. Nikkei Asian Review is a weekly English language news-magazine owned by Nikkei, one of Japan's leading media groups...",
+        "photo": "img/20160702_cuk400.u335.d20160701.t154917.jpg"
+    }, {
+        "id": "#15QDJO30",
+        "nameProduct": "The Profession Of Violence: The Rise and Fall Of The Kray Twins",
+        "price": "32",
+        "describe": "The Profession Of Violence: The Rise and Fall Of The Kray Twins The classic, bestselling account of the infamous Kray twins, now a major film, starring Tom Hardy. Reggie and Ronnie Kray ruled London’s gangland during the 60s with a ruthlessness and viciousness that shocks even now. Building an empire of organised crime that has never been matched, the brothers swindled, extorted and terrorised – while enjoying a glittering celebrity status at the heart of the swinging 60s scene, until their downfall and imprisonment for life.....",
+        "photo": "img/326.u2654.d20160709.t135630.jpg"
     }
 ];
 
@@ -29,9 +41,9 @@ var addItem = function(text) {
     listProducts.push(text);
 };
 var editItem = function(id, index) {
-  var items = this.state.listProducts;
-   items[index] = item;
-   listProducts = items;
+    var items = this.state.listProducts;
+    items[index] = item;
+    listProducts = items;
 };
 var delItem = function(id) {
     // listProducts.splice(index, 1);
