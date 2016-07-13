@@ -12,26 +12,29 @@ class Home extends React.Component {
         }
         this._onChange = this._onChange.bind(this);
         this.handleBuy = this.handleBuy.bind(this);
-        // this.deleteCart = this.deleteCart.bind(this);
     }
+
+    // was call after finish render
     componentDidMount() {
         AppStore.addChangeListener(this._onChange);
     }
+
     componentWillUnmount() {
         AppStore.removeChangeListener(this._onChange);
     }
+
+    //was call after data in stores was change, and setState....
     _onChange() {
         this.setState({listItems: AppStore.getAll()});
     }
 
+
+// Use indexItem to get all product: id, price, describe....
     handleBuy(indexItem){
       var product = this.state.listItems[indexItem];
       Actions.addToCart(product);
     }
 
-    // deleteCart(idItem){
-    //   Actions.deleteCart(idItem);
-    // }
     render() {
         return (
             <div>

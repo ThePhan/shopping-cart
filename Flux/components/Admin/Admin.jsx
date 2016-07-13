@@ -16,7 +16,6 @@ class Admin extends React.Component {
         this._onChange = this._onChange.bind(this);
         this.updateItemHandle = this.updateItemHandle.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
-        // this.deleteCart = this.deleteCart.bind(this);
     }
     componentDidMount() {
         AppStore.addChangeListener(this._onChange);
@@ -28,7 +27,8 @@ class Admin extends React.Component {
         this.setState({listItems: AppStore.getAll()});
     }
     addItemHandle(item) {
-        var idItem = new Date().getTime();
+
+      //Create auto id for one item.
         var x = '';
         for (var i = 0; i < 7; i++) {
             var _id = Math.floor(Math.random() * 35);
@@ -40,6 +40,8 @@ class Admin extends React.Component {
         item.id = x;
         Actions.addItem(item);
     }
+
+    //
     handleEditButton(index) {
         this.setState({editItem: this.state.listItems[index], editItemIndex: index});
     }
@@ -47,6 +49,7 @@ class Admin extends React.Component {
     updateItemHandle(item, index) {
         Actions.editItem(item, index);
 
+        // set textbox null after update
         this.setState({null, editItem: {}});
     }
 

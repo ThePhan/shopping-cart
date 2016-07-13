@@ -15,7 +15,7 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
 /* use "***" :"webpack-dev-server --inline --content-base "
-  in package.josn to run webpack without node.server and " . --history-api-fallback" to
+  "script:" in package.josn to run webpack without node.server and " . --history-api-fallback" to
   save state when refresh page. bundle by use npm ***
 */
 

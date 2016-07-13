@@ -10,7 +10,6 @@ class Additem extends React.Component {
         this.handleOnchange = this.handleOnchange.bind(this);
         this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this);
         this.ItemHandle = this.ItemHandle.bind(this);
-        //this.addItemHandle = this.addItemHandle.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -18,6 +17,7 @@ class Additem extends React.Component {
             item: nextProps.item || {}
         })
     }
+
     handleOnchange(field, e) {
         var item = this.state.item;
         item[field] = e.target.value;
