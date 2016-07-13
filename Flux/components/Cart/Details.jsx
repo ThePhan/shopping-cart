@@ -4,11 +4,9 @@ import localStorage from 'react-localstorage';
 class Details extends React.Component {
     constructor(props) {
         super(props);
-        mixins : [localStorage]
         this.state = {
             param: this.props.params.id,
-            listCart: AppStore.getListCart(),
-            arrayDetail: []
+            listProducts: AppStore.getAll()
         }
         this._onChange = this._onChange.bind(this);
         this.componentWillMount = this.componentWillMount.bind(this);
@@ -22,25 +20,33 @@ class Details extends React.Component {
     }
     _onChange() {
 
-        this.setState({listCart: AppStore.getListCart()});
+        this.setState({listProducts: AppStore.getAll()});
     }
+
+    /*
+        - get id from param URL, then parse with id in listproduct.
+        - if true, return and setState for listproduct.
+        -rerender component with new id
+    */
     componentWillMount() {
         var newArr = [];
-        for (var i = 0; i < this.state.listCart.length; i++) {
-            if (this.state.param == this.state.listCart[i].id) {
-                newArr.push(this.state.listCart[i]);
+        for (var i = 0; i < this.state.listProducts.length; i++) {
+            if (this.state.param == this.state.listProducts[i].id) {
+                newArr.push(this.state.listProducts[i]);
             }
         }
-        this.setState({listCart: newArr});
-        localStorage.state = JSON.stringify(this.state);
-        console.log(this.state.listCart.length + "dasdadada")
+        this.setState({listProducts: newArr});
+        console.log(this.state.listProducts.length + "dasdadada")
 
     }
     componentDidUpdate(prevProps, prevState) {
         localStorage.state = JSON.stringify(this.state);
     }
     render() {
-        var details = this.state.listCart.map(function(cart, index) {
+      /*
+        -Map function to render detail product into component
+      */
+        var details = this.state.listProducts.map(function(cart, index) {
             return (
                 <li key={index}>
                     <div className="col-xs-12 col-sm-7 col-md-8  col-lg-8 listCartDetail">

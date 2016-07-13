@@ -4,7 +4,7 @@
   "description": "demoflux",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --content-base . --history-api-fallback"
+    "start": "webpack -p && node server.js "
   },
   "author": "ChrisPhan",
   "license": "BSD-2-Clause",

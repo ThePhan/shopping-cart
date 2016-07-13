@@ -14,8 +14,12 @@ app.use(express.static(path.join(__dirname)))
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
+/* use "***" :"webpack-dev-server --inline --content-base "
+  in package.josn to run webpack without node.server and " . --history-api-fallback" to
+  save state when refresh page. bundle by use npm ***
+*/
 
-var PORT = process.env.PORT || 8080
+var PORT = process.env.PORT || 8088
 app.listen(PORT, function() {
   console.log('Production Express server running at localhost:' + PORT)
 })
