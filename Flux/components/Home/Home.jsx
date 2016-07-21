@@ -1,6 +1,6 @@
 import React from 'react';
-import AppStore from '../stores/AppStore.jsx';
-import Actions from '../actions/actions.jsx';
+import AppStore from '../../stores/AppStore.jsx';
+import Actions from '../../actions/actions.jsx';
 import ListItem from './ListItem.jsx';
 
 class Home extends React.Component {
