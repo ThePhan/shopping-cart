@@ -18,7 +18,8 @@ class Admin extends React.Component {
         this.deleteItem = this.deleteItem.bind(this);
     }
     componentDidMount() {
-        AppStore.addChangeListener(this._onChange);
+        AppStore.addChangeListener(this._onChange)
+        document.title = 'Admin'
     }
     componentWillUnmount() {
         AppStore.removeChangeListener(this._onChange);

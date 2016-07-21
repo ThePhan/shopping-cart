@@ -8,7 +8,11 @@ var config = {
     /*webpack-dev-server....
     ......
     */
-
+    
+    devServer: {
+        inline: true,
+        port: 2020
+    },
 
     //Module bundle
     module: {

@@ -8,6 +8,7 @@ import ListCart from './ListCart.jsx';
 
 class Cart extends React.Component {
     constructor(props) {
+
         super(props);
         this.state = {
             listCart: AppStore.getListCart()
@@ -16,7 +17,8 @@ class Cart extends React.Component {
     }
 
     componentDidMount() {
-        AppStore.addChangeListener(this._onChange);
+        AppStore.addChangeListener(this._onChange)
+        document.title = 'Cart'
     }
     componentWillUnmount() {
         AppStore.removeChangeListener(this._onChange);
@@ -52,4 +54,5 @@ class Cart extends React.Component {
 
     }
 };
+Cart.displayName="dlskdkaskdlkadlakl";
 export default Cart;

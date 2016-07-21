@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname)))
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
-/* use "***" :"webpack-dev-server --inline --content-base "
+/* use "start" :"webpack-dev-server --inline --content-base "
   "script:" in package.josn to run webpack without node.server and " . --history-api-fallback" to
-  save state when refresh page. bundle by use npm ***
+  save state when refresh page. bundle by use npm start || webpack -p to bundle file index.js
 */
 
 var PORT = process.env.PORT || 8088

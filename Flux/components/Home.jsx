@@ -16,7 +16,8 @@ class Home extends React.Component {
 
     // was call after finish render
     componentDidMount() {
-        AppStore.addChangeListener(this._onChange);
+        AppStore.addChangeListener(this._onChange)
+        document.title = 'Shopping'
     }
 
     componentWillUnmount() {
