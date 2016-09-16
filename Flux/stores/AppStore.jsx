@@ -81,7 +81,7 @@ var addToCart = function(product) {
     } else {
 
         listCart.push(product);
-        
+
     }
 };
 var ShopStore = objectAssign({}, EventEmitter.prototype, {
