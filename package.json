@@ -4,8 +4,8 @@
   "description": "demoflux",
   "main": "index.js",
   "scripts": {
-    "start1": "webpack -p && node server.js ",
-    "start": "webpack-dev-server --hot . --history-api-fallback"
+    "start": "webpack -p && node server.js ",
+    "start1": "webpack-dev-server --hot . --history-api-fallback"
   },
   "author": "ChrisPhan",
   "license": "BSD-2-Clause",
